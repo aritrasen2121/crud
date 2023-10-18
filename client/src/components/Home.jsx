@@ -12,7 +12,7 @@ const Home = () => {
     const navigate = useNavigate()
 
     const getItems = async () => {
-        await axios.get(`http://localhost:5000/api/items?currPage=${currPage}`)
+        await axios.get(`https://crud-ayrd.onrender.com/api/items?currPage=${currPage}`)
             .then(res => setItems(res.data))
             .catch(err => console.log(err))
     }
@@ -34,12 +34,12 @@ const Home = () => {
         setEditItemId(id)
     }
     const getItemById = async (id) => {
-        await axios.get(`http://localhost:5000/api/items/${id}`)
+        await axios.get(`https://crud-ayrd.onrender.com/api/items/${id}`)
             .then(res => setEditItem(res.data))
             .catch(err => console.log(err))
     }
     const editItemReq = async (id) => {
-        axios.put(`http://localhost:5000/api/items/${id}`,
+        axios.put(`https://crud-ayrd.onrender.com/api/items/${id}`,
             edititem
         )
             .then(() => getItems(currPage))
@@ -63,7 +63,7 @@ const Home = () => {
     }, [currPage])
 
     const deleteReq = async (id) => {
-        axios.delete(`http://localhost:5000/api/items/${id}`)
+        axios.delete(`https://crud-ayrd.onrender.com/api/items/${id}`)
             .then(() => navigate('/'))
             .catch(err => console.log(err))
         setItems(

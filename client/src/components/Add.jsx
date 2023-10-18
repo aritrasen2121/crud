@@ -18,7 +18,7 @@ const Add = () => {
     }))    
   }
   const addItemReq = async () =>{
-    axios.post('http://localhost:5000/api/items',
+    axios.post('https://crud-ayrd.onrender.com/api/items',
       inputs
     )
     .catch(err => console.log(err))
